@@ -1,0 +1,16 @@
+conn hr/hr
+set serveroutput on;
+declare
+num number(10) := &enter_the_number;
+begin
+if num > 0
+then
+dbms_output.put_line('POSITIVE');
+elsif  num < 0
+then
+dbms_output.put_line('NEGATIVE');
+else
+dbms_output.put_line('ZERO');
+end if;
+end;
+/

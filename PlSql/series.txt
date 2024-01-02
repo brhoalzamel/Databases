@@ -1,0 +1,15 @@
+conn hr/hr
+set serveroutput on;
+declare
+x number := &x;
+n number := &n;
+s number := 0;
+p number := 1;
+begin
+for i in 1..n loop
+p := p * x;
+s := s+p;
+end loop;
+dbms_output.put_line('s = '|| s);
+end;
+/

@@ -1,0 +1,17 @@
+set serveroutput on;
+declare
+x int:=&x;
+y int:=&y;
+z int:=&z;
+middle int;
+begin
+if x > y and y > z then middle:=y; end if;
+if x > z and z > y then middle:=z; end if;
+if y > x and x > z then middle:=x; end if;
+if y > z and z > x then middle:=z; end if;
+if z > y and y > x then middle:=y; end if;
+if z > x and x > y then middle:=x; end if;
+
+dbms_output.put_line('middle = '|| middle);
+end;
+/

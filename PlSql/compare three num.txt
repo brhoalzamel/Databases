@@ -1,0 +1,12 @@
+set serveroutput on;
+declare
+x int:=&x;
+y int:=&y;
+z int:=&z;
+maxi int;
+begin
+if x > y then maxi:=x; else maxi:=y; end if;
+if z > maxi then maxi:=z; end if;
+dbms_output.put_line('max = '|| maxi);
+end;
+/

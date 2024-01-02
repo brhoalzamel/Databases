@@ -1,0 +1,27 @@
+set serveroutput on;
+declare
+a int := &a;
+b int := &b;
+c int := &c;
+x float;
+delta float;
+begin
+	-- ax^2  + bx + c = 0
+	-- a = 0 => bx + c = 0 First degree equation
+if a = 0 then 
+x := -c/b; 
+dbms_output.put_line('x = '|| x);
+else 
+delta  := b * b - (4 *a *c);
+if delta  > 0 then 
+x := (-b - delta) / 2 * a;
+dbms_output.put_line('x1 = '|| x);
+x := (-b + delta) / 2 * a;
+dbms_output.put_line('x2 = '|| x);
+elsif delta = 0 then x := -b/(2 *a);
+dbms_output.put_line('x = '|| x);
+else dbms_output.put_line('There are no real solutions to the equation.');
+end if;
+end if;
+end;
+/

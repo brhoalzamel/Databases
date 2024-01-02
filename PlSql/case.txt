@@ -1,0 +1,13 @@
+conn hr/hr
+set serveroutput on;
+declare
+grade char(1) := upper('&grade');
+begin
+case grade
+when 'A' then dbms_output.put_line('****** Excellent ******');
+when 'B' then dbms_output.put_line('***** Very good******');
+when 'C' then dbms_output.put_line('****** Good ******');
+else dbms_output.put_line('Not Found');
+end case;
+end;
+/

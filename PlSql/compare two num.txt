@@ -1,0 +1,10 @@
+set serveroutput on;
+declare
+x int:=&x;
+y int:=&y;
+begin
+if x > y then dbms_output.put_line(x||'  > ' ||y);
+else  dbms_output.put_line(x||'  < ' ||y);
+end if;
+end;
+/

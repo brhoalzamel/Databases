@@ -1,0 +1,26 @@
+conn hr/hr
+set serveroutput on
+declare
+x emp%rowtype;
+begin
+select * into x from emp where emp.salary = 253;
+dbms_output.put_line(x.name || '  ---  '|| x.salary);
+end;
+/
+
+
+
+
+-- Or
+
+conn hr/hr
+set serveroutput on
+declare
+x emp%rowtype;
+begin
+select name,salary into x.name,x.salary from emp where emp.salary = 253;
+dbms_output.put_line(x.name || '  ---  '|| x.salary);
+end;
+/
+
+

@@ -1,0 +1,12 @@
+set serveroutput on;
+declare 
+	type employee_record is record (
+		employee_name varchar2(10),
+		employee_salary number
+	);
+
+	type emp_array is table of employee_record index by pls_integer;
+	emp emp_array;
+begin
+	for emp_rec in (select employee_name,employee_salary from emp) loop
+		emp(emp_rec.

@@ -1,0 +1,19 @@
+create table emp(name varchar2(10), salary number(7,2));
+insert into emp values('ahmed',2343);
+insert into emp values('ali',253);
+insert into emp values('mohammed',43453);
+insert into emp values('yaser',43453);
+insert into emp values('mylove',14345.3);
+
+conn hr/hr
+set serveroutput on;
+declare
+v_salary emp.salary%type;
+v_comm v_salary%type;
+begin
+select salary into v_salary from emp where salary = 14345.3;
+v_comm:= v_salary*0.2;
+dbms_output.put_line('salary = '|| v_salary);
+dbms_output.put_line('comm = '|| v_comm);
+end;
+/

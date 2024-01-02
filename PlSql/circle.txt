@@ -1,0 +1,11 @@
+conn hr/hr
+set serveroutput on;
+declare
+r number(10) := &r;
+pi float := 3.14;
+area float;
+begin 
+area := r * r * pi;
+dbms_output.put_line('the area is' || area);
+end;
+/
